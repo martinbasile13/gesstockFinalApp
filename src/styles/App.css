@@ -1,0 +1,13 @@
+.app-container {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.paper-content {
+  transition: all 0.3s ease;
+}
+
+.paper-content:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+} 
