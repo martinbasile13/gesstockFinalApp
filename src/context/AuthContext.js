@@ -1,10 +1,14 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
 
-const supabase = createClient(
-  'https://dkrpnaoswzuulnsyohdo.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRrcnBuYW9zd3p1dWxuc3lvaGRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk5OTUzNzksImV4cCI6MjA1NTU3MTM3OX0.s-WGpnVq8Ir6vVfJo0h2xwk_rR9tW0oyDwwIk79LodA'
-);
+const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error('Las variables de entorno de Supabase no están configuradas.');
+}
+
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 const AuthContext = createContext({});
 
