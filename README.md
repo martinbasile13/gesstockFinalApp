@@ -28,16 +28,23 @@ Aplicación de gestión de inventario y punto de venta desarrollada con Electron
 - npm (incluido con Node.js)
 - Git
 
+### Requisitos adicionales para Windows
+- Python 2.7 o superior
+- Visual Studio Build Tools
+- Drivers de la impresora térmica (si se usa)
+
 ## Instalación
+
+### Pasos generales
 
 1. Clonar el repositorio:
 ```bash
-git clone https://github.com/tu-usuario/gesstockFinalApp.git
+git clone https://github.com/martinbasile13/gesstockFinalApp.git
+cd gesstockFinalApp
 ```
 
 2. Instalar dependencias:
 ```bash
-cd gesstockFinalApp
 npm install
 ```
 
@@ -47,7 +54,27 @@ REACT_APP_SUPABASE_URL=tu_url_de_supabase
 REACT_APP_SUPABASE_ANON_KEY=tu_clave_anonima_de_supabase
 ```
 
-4. Iniciar la aplicación en modo desarrollo:
+### Configuración específica para Windows
+
+1. Instalar herramientas de construcción de Windows:
+```bash
+npm install --global windows-build-tools
+```
+
+2. Si hay problemas con módulos nativos:
+```bash
+npm install --global node-gyp
+```
+
+3. Asegurarse de tener instalados los drivers de la impresora térmica
+
+4. En caso de problemas con la impresión:
+   - Verificar que la impresora esté configurada como predeterminada
+   - Comprobar que los permisos de Windows permitan la impresión desde aplicaciones
+   - Asegurarse de que el tamaño de papel esté configurado correctamente
+
+### Iniciar la aplicación
+
 ```bash
 npm run electron-dev
 ```
@@ -75,6 +102,22 @@ gesstockFinalApp/
 └── package.json
 ```
 
+## Solución de Problemas Comunes
+
+### Windows
+1. Error "node-gyp":
+   - Ejecutar `npm install --global windows-build-tools`
+   - Asegurarse de tener Python instalado
+
+2. Problemas de impresión:
+   - Verificar la configuración de la impresora en Windows
+   - Comprobar que el driver esté correctamente instalado
+   - Ajustar el tamaño de papel en la configuración de Windows
+
+3. Errores de módulos nativos:
+   - Ejecutar `npm rebuild`
+   - Verificar la versión de Node.js
+
 ## Contribuir
 
 1. Fork el proyecto
@@ -91,4 +134,4 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 Tu Nombre - [@tu_twitter](https://twitter.com/tu_twitter)
 
-Link del proyecto: [https://github.com/tu-usuario/gesstockFinalApp](https://github.com/tu-usuario/gesstockFinalApp) 
+Link del proyecto: [https://github.com/martinbasile13/gesstockFinalApp](https://github.com/martinbasile13/gesstockFinalApp) 
